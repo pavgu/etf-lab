@@ -16,18 +16,20 @@ class YahooFinanceIngester:
     def fetch_prices(self, ticker: str, period: str = "10y", start_date: str = None) -> pd.DataFrame:
         """Fetch price data from Yahoo Finance."""
         try:
-            params = {
-                'ticker': ticker,
-                'auto_adjust': False,
-                'progress': False,
-            }
-            
             if start_date:
-                params['start'] = start_date
+                df = yf.download(
+                    ticker,
+                    start=start_date,
+                    auto_adjust=False,
+                    progress=False,
+                )
             else:
-                params['period'] = period
-                
-            df = yf.download(**params)
+                df = yf.download(
+                    ticker,
+                    period=period,
+                    auto_adjust=False,
+                    progress=False,
+                )
 
             if df.empty:
                 return df
@@ -64,6 +66,9 @@ class YahooFinanceIngester:
                 if incremental:
                     latest_date = repo.get_latest_date(ticker)
                     if latest_date:
+                        # Convert to string if it's not already
+                        if not isinstance(latest_date, str):
+                            latest_date = str(latest_date)
                         # Start from day after latest date
                         start_date = (datetime.fromisoformat(latest_date) + timedelta(days=1)).strftime("%Y-%m-%d")
                         self.logger.info(f"  Starting from {start_date}")

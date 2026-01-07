@@ -37,10 +37,10 @@ class PriceRepository:
         """Load price data for a ticker."""
         con = get_connection()
         try:
-            df = pd.read_sql(
+            df = con.execute(
                 "SELECT * FROM prices WHERE ticker = ? ORDER BY date",
-                con, params=[ticker]
-            )
+                [ticker]
+            ).df()
             df['date'] = pd.to_datetime(df['date'])
             return df
         finally:
