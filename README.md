@@ -61,6 +61,18 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install yfinance pandas duckdb matplotlib numpy
 ```
 
+4. Initialize database with ETF data:
+```bash
+# Ingest US ETFs (200 tickers)
+python scripts/ingest.py --us
+
+# Ingest European UCITS ETFs  
+python scripts/ingest.py --ucits
+
+# Or both at once
+python scripts/ingest.py --us --ucits
+```
+
 ## Usage
 
 ### Data Ingestion
@@ -95,6 +107,14 @@ Check database contents:
 
 ```bash
 python scripts/check_db.py
+```
+
+### Exchange Analysis
+
+Analyze which exchanges are represented:
+
+```bash
+python scripts/analyze_exchanges.py
 ```
 
 ### Running Tests
@@ -160,9 +180,10 @@ print(f"Sharpe Ratio: {metrics.sharpe_ratio:.2f}")
 
 ## Data Sources
 
-- **US ETFs**: 200 core ETFs covering major asset classes
-- **UCITS ETFs**: European-domiciled ETFs for global investors
+- **US ETFs**: 200 core ETFs covering major asset classes (NYSE Arca, NASDAQ)
+- **UCITS ETFs**: European-domiciled ETFs for global investors (LSE, Xetra)
 - **Yahoo Finance**: Real-time and historical price data
+- **4 Exchanges**: NYSE Arca, NASDAQ, London Stock Exchange, Xetra (Germany)
 
 ## Database
 
