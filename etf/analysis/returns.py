@@ -29,4 +29,6 @@ class ReturnsCalculator:
         """Calculate annualized return from cumulative return."""
         if periods <= 0:
             raise ValueError("Periods must be greater than zero")
+        if cumulative_return <= -1:
+            raise ValueError("Cumulative return cannot be <= -1 (total loss)")
         return (1 + cumulative_return) ** (252 / periods) - 1

@@ -9,21 +9,24 @@ def main():
     try:
         repo = PriceRepository()
         
-        # Check row counts
+        # Check row counts and cache data
         tickers = repo.get_available_tickers()
         if not tickers:
             print("No data found in database.")
             return
         
+        # Load data once and cache it
+        ticker_data = {}
         print("Row counts by ticker:")
         for ticker in tickers:
             df = repo.load_prices(ticker)
+            ticker_data[ticker] = df
             print(f"  {ticker}: {len(df)}")
         
-        # Show recent data
+        # Show recent data using cached data
         print("\nRecent data (last 5 records):")
-        for ticker in tickers[:3]:  # Show only first 3 tickers
-            df = repo.load_prices(ticker)
+        for ticker in list(ticker_data.keys())[:3]:  # Show only first 3 tickers
+            df = ticker_data[ticker]
             if not df.empty:
                 recent = df.tail(5)
                 print(f"\n{ticker}:")

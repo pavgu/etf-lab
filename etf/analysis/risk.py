@@ -8,11 +8,15 @@ class RiskCalculator:
     @staticmethod
     def volatility(returns: pd.Series) -> float:
         """Calculate annualized volatility."""
+        if returns.empty:
+            return 0.0
         return returns.std() * np.sqrt(252)
     
     @staticmethod
     def sharpe_ratio(returns: pd.Series, risk_free_rate: float = 0.0) -> float:
         """Calculate Sharpe ratio."""
+        if returns.empty:
+            return 0.0
         excess_returns = returns.mean() * 252 - risk_free_rate
         vol = RiskCalculator.volatility(returns)
         return excess_returns / vol if vol > 0 else 0.0
@@ -20,6 +24,11 @@ class RiskCalculator:
     @staticmethod
     def max_drawdown(cumulative_returns: pd.Series) -> float:
         """Calculate maximum drawdown."""
-        peak = cumulative_returns.cummax()
-        drawdown = (cumulative_returns - peak) / (1 + peak)
+        if cumulative_returns.empty:
+            return 0.0
+        
+        # Convert cumulative returns to wealth index (starting at 1)
+        wealth_index = 1 + cumulative_returns
+        peak = wealth_index.cummax()
+        drawdown = (wealth_index - peak) / peak
         return drawdown.min()

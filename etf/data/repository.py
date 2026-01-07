@@ -11,6 +11,18 @@ class PriceRepository:
     
     def save_prices(self, df: pd.DataFrame):
         """Save price data to database."""
+        # Validate input type first
+        if not isinstance(df, pd.DataFrame):
+            raise TypeError("Input must be a pandas DataFrame")
+            
+        if df.empty:
+            raise ValueError("DataFrame cannot be empty")
+        
+        required_cols = ['ticker', 'date', 'close']
+        missing_cols = [col for col in required_cols if col not in df.columns]
+        if missing_cols:
+            raise ValueError(f"DataFrame missing required columns: {missing_cols}")
+        
         con = get_connection()
         try:
             con.register("df", df)

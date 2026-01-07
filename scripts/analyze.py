@@ -35,6 +35,8 @@ def main():
     if results:
         df = pd.DataFrame(results)
         print(df.to_string(index=False))
+    else:
+        print("No successful analyses completed.")
 
 
 if __name__ == "__main__":

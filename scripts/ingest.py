@@ -14,8 +14,14 @@ def load_tickers_from_csv(csv_path: str) -> list[str]:
         if 'symbol' not in df.columns:
             raise ValueError(f"CSV file {csv_path} missing 'symbol' column")
         return df['symbol'].tolist()
-    except Exception as e:
-        print(f"Error loading CSV file {csv_path}: {e}")
+    except FileNotFoundError:
+        print(f"CSV file not found: {csv_path}")
+        raise
+    except pd.errors.EmptyDataError:
+        print(f"CSV file is empty: {csv_path}")
+        raise
+    except KeyError as e:
+        print(f"Missing column in CSV: {e}")
         raise
 
 

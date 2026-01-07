@@ -2,10 +2,15 @@
 """ETF data ingestion script using new class-based architecture."""
 
 import sys
+import argparse
 from etf.data.ingestion import YahooFinanceIngester
 
 
-if __name__ == "__main__":
+def main():
+    parser = argparse.ArgumentParser(description='Ingest ETF data from Yahoo Finance')
+    parser.add_argument('--full', action='store_true', help='Full reload of all historical data')
+    args = parser.parse_args()
+    
     TICKERS = [
         "SPY",
         "VEA",
@@ -13,13 +18,18 @@ if __name__ == "__main__":
         "SXR8.DE",
     ]
     
-    # Check if --full flag is passed for full reload
-    full_reload = "--full" in sys.argv
-    
-    ingester = YahooFinanceIngester()
-    ingester.ingest_tickers(TICKERS, incremental=not full_reload)
-    
-    if full_reload:
-        print("\nFull reload completed.")
-    else:
-        print("\nIncremental update completed. Use --full for complete reload.")
+    try:
+        ingester = YahooFinanceIngester()
+        ingester.ingest_tickers(TICKERS, incremental=not args.full)
+        
+        if args.full:
+            print("\nFull reload completed.")
+        else:
+            print("\nIncremental update completed. Use --full for complete reload.")
+    except Exception as e:
+        print(f"Error during ingestion: {e}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

@@ -28,13 +28,16 @@ class TimeSeriesAnalyzer:
     
     def calculate_metrics(self, df: pd.DataFrame) -> dict:
         """Calculate performance metrics."""
-        df_with_returns = self.returns_calc.cumulative_returns(df.reset_index())
+        df_with_returns = self.returns_calc.cumulative_returns(df)
         returns = df_with_returns['daily_return'].dropna()
+        
+        # Use actual number of trading days for annualized return
+        trading_days = len(returns)
         
         return {
             'total_return': df_with_returns['cumulative_return'].iloc[-1],
             'annualized_return': self.returns_calc.annualized_return(
-                df_with_returns['cumulative_return'].iloc[-1], len(df_with_returns)
+                df_with_returns['cumulative_return'].iloc[-1], trading_days
             ),
             'volatility': self.risk_calc.volatility(returns),
             'sharpe_ratio': self.risk_calc.sharpe_ratio(returns),
@@ -70,15 +73,19 @@ class TimeSeriesAnalyzer:
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8))
         
         for ticker in tickers:
-            df = self.load_etf_data(ticker)
-            if not df.empty:
-                df_with_returns = self.returns_calc.cumulative_returns(df.reset_index())
-                df_with_returns.set_index('date', inplace=True)
-                
-                ax1.plot(df_with_returns.index, df_with_returns['cumulative_return'], label=ticker)
-                ax2.plot(df_with_returns.index, 
-                        df_with_returns['daily_return'].rolling(30).std() * np.sqrt(252), 
-                        label=ticker)
+            try:
+                df = self.load_etf_data(ticker)
+                if not df.empty:
+                    df_with_returns = self.returns_calc.cumulative_returns(df.reset_index())
+                    df_with_returns = df_with_returns.set_index('date')
+                    
+                    ax1.plot(df_with_returns.index, df_with_returns['cumulative_return'], label=ticker)
+                    ax2.plot(df_with_returns.index, 
+                            df_with_returns['daily_return'].rolling(30).std() * np.sqrt(252), 
+                            label=ticker)
+            except Exception as e:
+                print(f"Error plotting {ticker}: {e}")
+                continue
         
         ax1.set_title('Cumulative Returns')
         ax1.set_ylabel('Return')
@@ -91,7 +98,12 @@ class TimeSeriesAnalyzer:
         ax2.grid(True)
         
         plt.tight_layout()
-        plt.savefig('etf_analysis.png', dpi=150, bbox_inches='tight')
+        
+        # Generate timestamped filename
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f'etf_analysis_{timestamp}.png'
+        plt.savefig(filename, dpi=150, bbox_inches='tight')
         plt.show()
 
 
@@ -115,3 +127,5 @@ if __name__ == "__main__":
         print("\n=== Summary Comparison ===")
         comparison_df = pd.DataFrame(results).T
         print(comparison_df.round(4))
+    else:
+        print("\nNo successful analyses completed.")
