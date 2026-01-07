@@ -1,0 +1,104 @@
+symbol,asset_class,region,category,currency,exchange,notes
+SPY,Equity,US,Broad Market,USD,NYSE Arca,S&P 500
+IVV,Equity,US,Broad Market,USD,NYSE Arca,S&P 500
+VOO,Equity,US,Broad Market,USD,NYSE Arca,S&P 500
+VTI,Equity,US,Broad Market,USD,NYSE Arca,Total US Market
+ITOT,Equity,US,Broad Market,USD,NYSE Arca,Total US Market
+SCHB,Equity,US,Broad Market,USD,NYSE Arca,Total US Market
+IWM,Equity,US,Small Cap,USD,NYSE Arca,Russell 2000
+IJR,Equity,US,Small Cap,USD,NYSE Arca,Small cap core
+VB,Equity,US,Small Cap,USD,NYSE Arca,Small cap blend
+MDY,Equity,US,Mid Cap,USD,NYSE Arca,S&P MidCap 400
+IJH,Equity,US,Mid Cap,USD,NYSE Arca,Mid cap core
+VO,Equity,US,Mid Cap,USD,NYSE Arca,Mid cap blend
+QQQ,Equity,US,Large Cap Growth,USD,NASDAQ,Nasdaq 100
+DIA,Equity,US,Large Cap,USD,NYSE Arca,Dow Jones Industrial
+
+XLF,Equity,US,Financials,USD,NYSE Arca,Sector
+XLK,Equity,US,Technology,USD,NYSE Arca,Sector
+XLE,Equity,US,Energy,USD,NYSE Arca,Sector
+XLV,Equity,US,Healthcare,USD,NYSE Arca,Sector
+XLY,Equity,US,Consumer Discretionary,USD,NYSE Arca,Sector
+XLP,Equity,US,Consumer Staples,USD,NYSE Arca,Sector
+XLI,Equity,US,Industrials,USD,NYSE Arca,Sector
+XLU,Equity,US,Utilities,USD,NYSE Arca,Sector
+XLRE,Equity,US,Real Estate,USD,NYSE Arca,Sector
+XLB,Equity,US,Materials,USD,NYSE Arca,Sector
+SMH,Equity,US,Semiconductors,USD,NYSE Arca,Industry
+SOXX,Equity,US,Semiconductors,USD,NYSE Arca,Industry
+IBB,Equity,US,Biotech,USD,NASDAQ,Industry
+KRE,Equity,US,Regional Banks,USD,NYSE Arca,Industry
+ITA,Equity,US,Aerospace & Defense,USD,NYSE Arca,Industry
+
+MTUM,Equity,US,Momentum,USD,NYSE Arca,Factor
+VLUE,Equity,US,Value,USD,NYSE Arca,Factor
+QUAL,Equity,US,Quality,USD,NYSE Arca,Factor
+USMV,Equity,US,Low Volatility,USD,NYSE Arca,Factor
+SIZE,Equity,US,Size,USD,NYSE Arca,Factor
+SPHQ,Equity,US,Quality,USD,NYSE Arca,Factor
+SPLV,Equity,US,Low Volatility,USD,NYSE Arca,Factor
+
+VEA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,MSCI EAFE
+IEFA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,Core EAFE
+EFA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,MSCI EAFE
+VGK,Equity,Europe,Broad Market,USD,NYSE Arca,Europe equities
+EZU,Equity,Eurozone,Broad Market,USD,NYSE Arca,Eurozone
+EWJ,Equity,Japan,Broad Market,USD,NYSE Arca,Japan
+EWU,Equity,UK,Broad Market,USD,NYSE Arca,UK
+EWC,Equity,Canada,Broad Market,USD,NYSE Arca,Canada
+EWA,Equity,Australia,Broad Market,USD,NYSE Arca,Australia
+EWL,Equity,Switzerland,Broad Market,USD,NYSE Arca,Switzerland
+EWN,Equity,Netherlands,Broad Market,USD,NYSE Arca,Netherlands
+EWD,Equity,Sweden,Broad Market,USD,NYSE Arca,Sweden
+EWG,Equity,Germany,Broad Market,USD,NYSE Arca,Germany
+EWQ,Equity,France,Broad Market,USD,NYSE Arca,France
+EWI,Equity,Italy,Broad Market,USD,NYSE Arca,Italy
+EWP,Equity,Spain,Broad Market,USD,NYSE Arca,Spain
+
+VWO,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,EM
+IEMG,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,Core EM
+EEM,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,Legacy EM
+EWZ,Equity,Brazil,Broad Market,USD,NYSE Arca,Brazil
+INDA,Equity,India,Broad Market,USD,NYSE Arca,India
+FXI,Equity,China,Broad Market,USD,NYSE Arca,China large cap
+KWEB,Equity,China,Internet,USD,NYSE Arca,China tech
+EWT,Equity,Taiwan,Broad Market,USD,NYSE Arca,Taiwan
+EWY,Equity,South Korea,Broad Market,USD,NYSE Arca,Korea
+EWS,Equity,Singapore,Broad Market,USD,NYSE Arca,Singapore
+EWM,Equity,Malaysia,Broad Market,USD,NYSE Arca,Malaysia
+EIDO,Equity,Indonesia,Broad Market,USD,NYSE Arca,Indonesia
+TUR,Equity,Turkey,Broad Market,USD,NYSE Arca,Turkey
+EZA,Equity,South Africa,Broad Market,USD,NYSE Arca,South Africa
+ARGT,Equity,Argentina,Broad Market,USD,NYSE Arca,Argentina
+GREK,Equity,Greece,Broad Market,USD,NYSE Arca,Greece
+RSX,Equity,Russia,Broad Market,USD,NYSE Arca,Legacy (historical only)
+
+AGG,Bonds,Global,Broad Market,USD,NYSE Arca,Core bonds
+BND,Bonds,US,Broad Market,USD,NYSE Arca,Total bond market
+IEF,Bonds,US,7-10Y Treasuries,USD,NYSE Arca,Intermediate
+IEI,Bonds,US,3-7Y Treasuries,USD,NYSE Arca,Intermediate
+SHY,Bonds,US,1-3Y Treasuries,USD,NYSE Arca,Short
+TLT,Bonds,US,20Y+ Treasuries,USD,NYSE Arca,Long
+LQD,Bonds,US,Investment Grade,USD,NYSE Arca,Corporate
+HYG,Bonds,US,High Yield,USD,NYSE Arca,HY
+JNK,Bonds,US,High Yield,USD,NYSE Arca,HY
+TIP,Bonds,US,Inflation Linked,USD,NYSE Arca,TIPS
+BIL,Bonds,US,T-Bills,USD,NYSE Arca,Cash proxy
+MUB,Bonds,US,Municipal,USD,NYSE Arca,Munis
+EMB,Bonds,Emerging Markets,Sovereign Debt,USD,NYSE Arca,EM debt
+VWOB,Bonds,Emerging Markets,Sovereign Debt,USD,NYSE Arca,EM debt
+IGOV,Bonds,Global,Treasuries,USD,NYSE Arca,Ex-US gov bonds
+
+VNQ,Real Assets,US,REITs,USD,NYSE Arca,US REITs
+REET,Real Assets,Global,REITs,USD,NYSE Arca,Global REITs
+SCHH,Real Assets,US,REITs,USD,NYSE Arca,US REITs
+GLD,Commodities,Global,Gold,USD,NYSE Arca,Gold
+IAU,Commodities,Global,Gold,USD,NYSE Arca,Gold
+SLV,Commodities,Global,Silver,USD,NYSE Arca,Silver
+DBC,Commodities,Global,Broad Commodities,USD,NYSE Arca,Commodity basket
+PDBC,Commodities,Global,Broad Commodities,USD,NYSE Arca,Commodity basket
+USO,Commodities,Global,Oil,USD,NYSE Arca,Crude oil
+UNG,Commodities,Global,Natural Gas,USD,NYSE Arca,Nat gas
+CORN,Commodities,Global,Agriculture,USD,NYSE Arca,Corn
+SOYB,Commodities,Global,Agriculture,USD,NYSE Arca,Soybeans
+WEAT,Commodities,Global,Agriculture,USD,NYSE Arca,Wheat
