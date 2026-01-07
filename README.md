@@ -130,6 +130,7 @@ python tests/run_tests.py
 ```python
 from etf.data.ingestion import YahooFinanceIngester
 from etf.analysis.performance import PerformanceAnalyzer
+from etf.visualization.charts import ETFVisualizer
 
 # Ingest data
 ingester = YahooFinanceIngester()
@@ -138,6 +139,11 @@ ingester.ingest_tickers(["SPY", "VTI"], incremental=True)
 # Analyze performance
 analyzer = PerformanceAnalyzer()
 metrics = analyzer.analyze_etf("SPY")
+
+# Create visualizations
+visualizer = ETFVisualizer()
+fig = visualizer.plot_performance_dashboard("SPY", data, metrics)
+visualizer.save_chart(fig, "spy_dashboard")
 
 print(f"Total Return: {metrics.total_return:.2%}")
 print(f"Sharpe Ratio: {metrics.sharpe_ratio:.2f}")
@@ -157,6 +163,9 @@ print(f"Sharpe Ratio: {metrics.sharpe_ratio:.2f}")
 ### Models
 - **`PriceData`**: Price data structure
 - **`PerformanceMetrics`**: Analysis results container
+
+### Visualization
+- **`ETFVisualizer`**: Creates charts and performance dashboards
 
 ## Features
 
