@@ -27,4 +27,6 @@ class ReturnsCalculator:
     @staticmethod
     def annualized_return(cumulative_return: float, periods: int) -> float:
         """Calculate annualized return from cumulative return."""
+        if periods <= 0:
+            raise ValueError("Periods must be greater than zero")
         return (1 + cumulative_return) ** (252 / periods) - 1

@@ -1,99 +1,117 @@
+#!/usr/bin/env python3
+"""ETF time series analysis using new class-based architecture."""
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from storage.db import get_connection
+from etf.data.repository import PriceRepository
+from etf.analysis.returns import ReturnsCalculator
+from etf.analysis.risk import RiskCalculator
 
 
-def load_etf_data(ticker: str) -> pd.DataFrame:
-    con = get_connection()
-    df = pd.read_sql(
-        "SELECT date, close FROM prices WHERE ticker = ? ORDER BY date",
-        con, params=[ticker]
-    )
-    con.close()
+class TimeSeriesAnalyzer:
+    """Time series analysis for ETFs."""
     
-    df['date'] = pd.to_datetime(df['date'])
-    df.set_index('date', inplace=True)
-    return df
-
-
-def calculate_returns(df: pd.DataFrame) -> pd.DataFrame:
-    df['daily_return'] = df['close'].pct_change()
-    df['cumulative_return'] = (1 + df['daily_return']).cumprod() - 1
-    return df
-
-
-def calculate_metrics(df: pd.DataFrame) -> dict:
-    returns = df['daily_return'].dropna()
+    def __init__(self):
+        self.repo = PriceRepository()
+        self.returns_calc = ReturnsCalculator()
+        self.risk_calc = RiskCalculator()
     
-    return {
-        'total_return': df['cumulative_return'].iloc[-1],
-        'annualized_return': (1 + df['cumulative_return'].iloc[-1]) ** (252 / len(df)) - 1,
-        'volatility': returns.std() * np.sqrt(252),
-        'sharpe_ratio': (returns.mean() * 252) / (returns.std() * np.sqrt(252)),
-        'max_drawdown': (df['cumulative_return'] - df['cumulative_return'].cummax()).min()
-    }
-
-
-def analyze_etf(ticker: str):
-    print(f"\n=== {ticker} Analysis ===")
+    def load_etf_data(self, ticker: str) -> pd.DataFrame:
+        """Load ETF data for analysis."""
+        df = self.repo.load_prices(ticker)
+        if df.empty:
+            return df
+        
+        df.set_index('date', inplace=True)
+        return df[['close']]
     
-    df = load_etf_data(ticker)
-    if df.empty:
-        print(f"No data found for {ticker}")
-        return
+    def calculate_metrics(self, df: pd.DataFrame) -> dict:
+        """Calculate performance metrics."""
+        df_with_returns = self.returns_calc.cumulative_returns(df.reset_index())
+        returns = df_with_returns['daily_return'].dropna()
+        
+        return {
+            'total_return': df_with_returns['cumulative_return'].iloc[-1],
+            'annualized_return': self.returns_calc.annualized_return(
+                df_with_returns['cumulative_return'].iloc[-1], len(df_with_returns)
+            ),
+            'volatility': self.risk_calc.volatility(returns),
+            'sharpe_ratio': self.risk_calc.sharpe_ratio(returns),
+            'max_drawdown': self.risk_calc.max_drawdown(df_with_returns['cumulative_return'])
+        }
     
-    df = calculate_returns(df)
-    metrics = calculate_metrics(df)
+    def analyze_etf(self, ticker: str) -> tuple[pd.DataFrame, dict] | None:
+        """Analyze single ETF."""
+        print(f"\n=== {ticker} Analysis ===")
+        
+        df = self.load_etf_data(ticker)
+        if df.empty:
+            print(f"No data found for {ticker}")
+            return None
+        
+        try:
+            metrics = self.calculate_metrics(df)
+            
+            print(f"Period: {df.index[0].date()} to {df.index[-1].date()}")
+            print(f"Total Return: {metrics['total_return']:.2%}")
+            print(f"Annualized Return: {metrics['annualized_return']:.2%}")
+            print(f"Volatility: {metrics['volatility']:.2%}")
+            print(f"Sharpe Ratio: {metrics['sharpe_ratio']:.2f}")
+            print(f"Max Drawdown: {metrics['max_drawdown']:.2%}")
+            
+            return df, metrics
+        except Exception as e:
+            print(f"Error analyzing {ticker}: {e}")
+            return None
     
-    print(f"Period: {df.index[0].date()} to {df.index[-1].date()}")
-    print(f"Total Return: {metrics['total_return']:.2%}")
-    print(f"Annualized Return: {metrics['annualized_return']:.2%}")
-    print(f"Volatility: {metrics['volatility']:.2%}")
-    print(f"Sharpe Ratio: {metrics['sharpe_ratio']:.2f}")
-    print(f"Max Drawdown: {metrics['max_drawdown']:.2%}")
-    
-    return df, metrics
-
-
-def plot_comparison(tickers: list[str]):
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8))
-    
-    for ticker in tickers:
-        df = load_etf_data(ticker)
-        if not df.empty:
-            df = calculate_returns(df)
-            ax1.plot(df.index, df['cumulative_return'], label=ticker)
-            ax2.plot(df.index, df['daily_return'].rolling(30).std() * np.sqrt(252), label=ticker)
-    
-    ax1.set_title('Cumulative Returns')
-    ax1.set_ylabel('Return')
-    ax1.legend()
-    ax1.grid(True)
-    
-    ax2.set_title('30-Day Rolling Volatility')
-    ax2.set_ylabel('Volatility')
-    ax2.legend()
-    ax2.grid(True)
-    
-    plt.tight_layout()
-    plt.savefig('etf_analysis.png', dpi=150, bbox_inches='tight')
-    plt.show()
+    def plot_comparison(self, tickers: list[str]):
+        """Plot comparison of multiple ETFs."""
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8))
+        
+        for ticker in tickers:
+            df = self.load_etf_data(ticker)
+            if not df.empty:
+                df_with_returns = self.returns_calc.cumulative_returns(df.reset_index())
+                df_with_returns.set_index('date', inplace=True)
+                
+                ax1.plot(df_with_returns.index, df_with_returns['cumulative_return'], label=ticker)
+                ax2.plot(df_with_returns.index, 
+                        df_with_returns['daily_return'].rolling(30).std() * np.sqrt(252), 
+                        label=ticker)
+        
+        ax1.set_title('Cumulative Returns')
+        ax1.set_ylabel('Return')
+        ax1.legend()
+        ax1.grid(True)
+        
+        ax2.set_title('30-Day Rolling Volatility')
+        ax2.set_ylabel('Volatility')
+        ax2.legend()
+        ax2.grid(True)
+        
+        plt.tight_layout()
+        plt.savefig('etf_analysis.png', dpi=150, bbox_inches='tight')
+        plt.show()
 
 
 if __name__ == "__main__":
+    analyzer = TimeSeriesAnalyzer()
     tickers = ["SPY", "VEA", "VWO"]
     
     # Individual analysis
     results = {}
     for ticker in tickers:
-        df, metrics = analyze_etf(ticker)
-        results[ticker] = metrics
+        result = analyzer.analyze_etf(ticker)
+        if result:
+            _, metrics = result
+            results[ticker] = metrics
     
     # Comparison plot
-    plot_comparison(tickers)
-    
-    # Summary comparison
-    print("\n=== Summary Comparison ===")
-    comparison_df = pd.DataFrame(results).T
-    print(comparison_df.round(4))
+    if results:
+        analyzer.plot_comparison(list(results.keys()))
+        
+        # Summary comparison
+        print("\n=== Summary Comparison ===")
+        comparison_df = pd.DataFrame(results).T
+        print(comparison_df.round(4))

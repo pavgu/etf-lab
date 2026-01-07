@@ -1,23 +1,38 @@
-from storage.db import get_connection
+#!/usr/bin/env python3
+"""Database check script using new class-based architecture."""
 
-con = get_connection()
+from etf.data.repository import PriceRepository
 
-# Check row counts
-result = con.execute("SELECT ticker, COUNT(*) as rows FROM prices GROUP BY ticker").fetchall()
-print("Row counts by ticker:")
-for ticker, count in result:
-    print(f"  {ticker}: {count}")
 
-# Show recent data
-print("\nRecent data:")
-recent = con.execute("""
-    SELECT ticker, date, close 
-    FROM prices 
-    ORDER BY date DESC 
-    LIMIT 10
-""").fetchall()
+def main():
+    """Check database contents."""
+    try:
+        repo = PriceRepository()
+        
+        # Check row counts
+        tickers = repo.get_available_tickers()
+        if not tickers:
+            print("No data found in database.")
+            return
+        
+        print("Row counts by ticker:")
+        for ticker in tickers:
+            df = repo.load_prices(ticker)
+            print(f"  {ticker}: {len(df)}")
+        
+        # Show recent data
+        print("\nRecent data (last 5 records):")
+        for ticker in tickers[:3]:  # Show only first 3 tickers
+            df = repo.load_prices(ticker)
+            if not df.empty:
+                recent = df.tail(5)
+                print(f"\n{ticker}:")
+                for _, row in recent.iterrows():
+                    print(f"  {row['date'].date()} ${row['close']:.2f}")
+    
+    except Exception as e:
+        print(f"Error checking database: {e}")
 
-for row in recent:
-    print(f"  {row[0]} {row[1]} ${row[2]:.2f}")
 
-con.close()
+if __name__ == "__main__":
+    main()
