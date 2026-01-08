@@ -1,52 +1,52 @@
-symbol,provider,asset_class,region,category,currency,exchange,distribution,notes
-IWDA.L,iShares,Equity,Global,Broad Market,USD,LSE,Acc,MSCI World
-SWDA.L,iShares,Equity,Global,Broad Market,USD,LSE,Acc,MSCI World
-VWRL.L,Vanguard,Equity,Global,Broad Market,USD,LSE,Dist,FTSE All-World
-VWCE.DE,Vanguard,Equity,Global,Broad Market,EUR,Xetra,Acc,FTSE All-World
-SSAC.L,iShares,Equity,Global,Broad Market,USD,LSE,Acc,ACWI
+symbol,provider,asset_class,region,category,currency,exchange,distribution,isin,notes
+IWDA.L,iShares,Equity,Global,Broad Market,USD,LSE,Acc,IE00B4L5Y983,iShares Core MSCI World UCITS ETF (BlackRock)
+SWDA.L,iShares,Equity,Global,Broad Market,USD,LSE,Acc,IE00BFY0GT14,iShares MSCI World UCITS ETF (BlackRock)
+VWRL.L,Vanguard,Equity,Global,Broad Market,USD,LSE,Dist,IE00B3RBWM25,Vanguard FTSE All-World UCITS ETF (Vanguard)
+VWCE.DE,Vanguard,Equity,Global,Broad Market,EUR,Xetra,Acc,IE00BK5BQT80,Vanguard FTSE All-World UCITS ETF (Vanguard)
+SSAC.L,iShares,Equity,Global,Broad Market,USD,LSE,Acc,IE00B6R52259,iShares MSCI ACWI UCITS ETF (BlackRock)
 
-SXR8.DE,iShares,Equity,US,Broad Market,EUR,Xetra,Acc,S&P 500
-CSPX.L,iShares,Equity,US,Broad Market,USD,LSE,Acc,S&P 500
-VUSA.L,Vanguard,Equity,US,Broad Market,USD,LSE,Dist,S&P 500
-IUSA.L,iShares,Equity,US,Broad Market,USD,LSE,Dist,S&P 500
+SXR8.DE,iShares,Equity,US,Broad Market,EUR,Xetra,Acc,IE00BJ0KDQ92,S&P 500
+CSPX.L,iShares,Equity,US,Broad Market,USD,LSE,Acc,IE00B5BMR087,S&P 500
+VUSA.L,Vanguard,Equity,US,Broad Market,USD,LSE,Dist,IE00B3S45H60,S&P 500
+IUSA.L,iShares,Equity,US,Broad Market,USD,LSE,Dist,IE00B52SFT06,S&P 500
 
-EIMI.L,iShares,Equity,Emerging Markets,Broad Market,USD,LSE,Acc,MSCI EM IMI
-EMIM.L,iShares,Equity,Emerging Markets,Broad Market,USD,LSE,Acc,MSCI EM
-VFEM.L,Vanguard,Equity,Emerging Markets,Broad Market,USD,LSE,Dist,FTSE EM
+EIMI.L,iShares,Equity,Emerging Markets,Broad Market,USD,LSE,Acc,IE00BKM4GZ66,MSCI EM IMI
+EMIM.L,iShares,Equity,Emerging Markets,Broad Market,USD,LSE,Acc,IE00B4L5YC18,MSCI EM
+VFEM.L,Vanguard,Equity,Emerging Markets,Broad Market,USD,LSE,Dist,IE00B3VVMM84,FTSE EM
 
-IMEU.L,iShares,Equity,Europe,Broad Market,EUR,LSE,Acc,MSCI Europe
-VGK.DE,Vanguard,Equity,Europe,Broad Market,EUR,Xetra,Acc,Europe equities
-EXSA.DE,iShares,Equity,Eurozone,Broad Market,EUR,Xetra,Acc,Euro Stoxx 50
+IMEU.L,iShares,Equity,Europe,Broad Market,EUR,LSE,Acc,IE00B1YZSC51,MSCI Europe
+VGK.DE,Vanguard,Equity,Europe,Broad Market,EUR,Xetra,Acc,IE00BKX55S42,Europe equities
+EXSA.DE,iShares,Equity,Eurozone,Broad Market,EUR,Xetra,Acc,IE00B4L5YX21,Euro Stoxx 50
 
-ISF.L,iShares,Equity,UK,Broad Market,GBP,LSE,Dist,FTSE 100
-MIDD.L,iShares,Equity,UK,Mid Cap,GBP,LSE,Acc,FTSE 250
-SJPA.L,iShares,Equity,Japan,Broad Market,USD,LSE,Acc,Japan equities
+ISF.L,iShares,Equity,UK,Broad Market,GBP,LSE,Dist,IE0005042456,FTSE 100
+MIDD.L,iShares,Equity,UK,Mid Cap,GBP,LSE,Acc,IE00B2QWCY14,FTSE 250
+SJPA.L,iShares,Equity,Japan,Broad Market,USD,LSE,Acc,IE00B42Z5J44,Japan equities
 
-WSML.L,iShares,Equity,Global,Small Cap,USD,LSE,Acc,MSCI World Small Cap
+WSML.L,iShares,Equity,Global,Small Cap,USD,LSE,Acc,IE00BF4RFH31,MSCI World Small Cap
 
-IWVL.L,iShares,Equity,Global,Value,USD,LSE,Acc,Factor
-IWMO.L,iShares,Equity,Global,Momentum,USD,LSE,Acc,Factor
-IWQU.L,iShares,Equity,Global,Quality,USD,LSE,Acc,Factor
-IWSZ.L,iShares,Equity,Global,Low Volatility,USD,LSE,Acc,Factor
+IWVL.L,iShares,Equity,Global,Value,USD,LSE,Acc,IE00BP3QZB59,Factor
+IWMO.L,iShares,Equity,Global,Momentum,USD,LSE,Acc,IE00BF4RFH31,Factor
+IWQU.L,iShares,Equity,Global,Quality,USD,LSE,Acc,IE00BYYHSQ67,Factor
+IWSZ.L,iShares,Equity,Global,Low Volatility,USD,LSE,Acc,IE00BYYHSM20,Factor
 
-AGGH.L,iShares,Bonds,Global,Broad Market,USD,LSE,Acc,Global Aggregate Bonds
-VAGF.L,Vanguard,Bonds,Global,Broad Market,USD,LSE,Acc,Global Aggregate Bonds
-EUNA.DE,iShares,Bonds,Global,Broad Market,EUR,Xetra,Acc,Global Aggregate EUR-hedged
+AGGH.L,iShares,Bonds,Global,Broad Market,USD,LSE,Acc,IE00B3F81409,Global Aggregate Bonds
+VAGF.L,Vanguard,Bonds,Global,Broad Market,USD,LSE,Acc,IE00BG47KH54,Global Aggregate Bonds
+EUNA.DE,iShares,Bonds,Global,Broad Market,EUR,Xetra,Acc,IE00B3BPCH51,Global Aggregate EUR-hedged
 
-IEAG.L,iShares,Bonds,Global,Treasuries,USD,LSE,Acc,Global Gov Bonds
-IBGL.L,iShares,Bonds,Global,Inflation Linked,USD,LSE,Acc,Global IL Bonds
+IEAG.L,iShares,Bonds,Global,Treasuries,USD,LSE,Acc,IE00B1FZS798,Global Gov Bonds
+IBGL.L,iShares,Bonds,Global,Inflation Linked,USD,LSE,Acc,IE00B1FZS467,Global IL Bonds
 
-IBTM.L,iShares,Bonds,US,Treasuries,USD,LSE,Acc,7–10Y Treasuries
-IBTS.L,iShares,Bonds,US,Treasuries,USD,LSE,Acc,1–3Y Treasuries
-IDTL.L,iShares,Bonds,US,Treasuries,USD,LSE,Acc,20Y+ Treasuries
+IBTM.L,iShares,Bonds,US,Treasuries,USD,LSE,Acc,IE00B1FZS350,7–10Y Treasuries
+IBTS.L,iShares,Bonds,US,Treasuries,USD,LSE,Acc,IE00B14X4M10,1–3Y Treasuries
+IDTL.L,iShares,Bonds,US,Treasuries,USD,LSE,Acc,IE00B1FZS244,20Y+ Treasuries
 
-LQDA.L,iShares,Bonds,US,Investment Grade,USD,LSE,Acc,Corp bonds
-IHYG.L,iShares,Bonds,US,High Yield,USD,LSE,Acc,HY Corp bonds
+LQDA.L,iShares,Bonds,US,Investment Grade,USD,LSE,Acc,IE00BYM31M36,Corp bonds
+IHYG.L,iShares,Bonds,US,High Yield,USD,LSE,Acc,IE00B66F4759,HY Corp bonds
 
-VEMT.L,Vanguard,Bonds,Emerging Markets,Sovereign Debt,USD,LSE,Dist,EM bonds
+VEMT.L,Vanguard,Bonds,Emerging Markets,Sovereign Debt,USD,LSE,Dist,IE00BZ163L38,EM bonds
 
-IWDP.L,iShares,Real Assets,Global,Property,USD,LSE,Acc,Global REITs
-VGRP.L,Vanguard,Real Assets,Global,Property,USD,LSE,Acc,Global REITs
+IWDP.L,iShares,Real Assets,Global,Property,USD,LSE,Acc,IE00B1FZ6S93,Global REITs
+VGRP.L,Vanguard,Real Assets,Global,Property,USD,LSE,Acc,IE00BKX55T58,Global REITs
 
-SGLN.L,iShares,Commodities,Global,Gold,USD,LSE,Acc,Physical gold
-PHAU.L,iShares,Commodities,Global,Gold,USD,LSE,Acc,Physical gold
+SGLN.L,iShares,Commodities,Global,Gold,USD,LSE,Acc,IE00B4ND3602,Physical gold
+PHAU.L,iShares,Commodities,Global,Gold,USD,LSE,Acc,IE00B579F325,Physical gold

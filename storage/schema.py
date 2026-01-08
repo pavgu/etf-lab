@@ -16,5 +16,18 @@ def ensure_schema():
                 PRIMARY KEY (ticker, date)
             )
         """)
+        
+        con.execute("""
+            CREATE TABLE IF NOT EXISTS etf_metadata (
+                ticker TEXT PRIMARY KEY,
+                isin TEXT,
+                asset_class TEXT,
+                region TEXT,
+                category TEXT,
+                currency TEXT,
+                exchange TEXT,
+                description TEXT
+            )
+        """)
     finally:
         con.close()

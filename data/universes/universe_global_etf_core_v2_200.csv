@@ -1,104 +1,104 @@
-symbol,asset_class,region,category,currency,exchange,notes
-SPY,Equity,US,Broad Market,USD,NYSE Arca,S&P 500
-IVV,Equity,US,Broad Market,USD,NYSE Arca,S&P 500
-VOO,Equity,US,Broad Market,USD,NYSE Arca,S&P 500
-VTI,Equity,US,Broad Market,USD,NYSE Arca,Total US Market
-ITOT,Equity,US,Broad Market,USD,NYSE Arca,Total US Market
-SCHB,Equity,US,Broad Market,USD,NYSE Arca,Total US Market
-IWM,Equity,US,Small Cap,USD,NYSE Arca,Russell 2000
-IJR,Equity,US,Small Cap,USD,NYSE Arca,Small cap core
-VB,Equity,US,Small Cap,USD,NYSE Arca,Small cap blend
-MDY,Equity,US,Mid Cap,USD,NYSE Arca,S&P MidCap 400
-IJH,Equity,US,Mid Cap,USD,NYSE Arca,Mid cap core
-VO,Equity,US,Mid Cap,USD,NYSE Arca,Mid cap blend
-QQQ,Equity,US,Large Cap Growth,USD,NASDAQ,Nasdaq 100
-DIA,Equity,US,Large Cap,USD,NYSE Arca,Dow Jones Industrial
+symbol,asset_class,region,category,currency,exchange,isin,notes
+SPY,Equity,US,Broad Market,USD,NYSE Arca,US78462F1030,SPDR S&P 500 ETF Trust (State Street)
+IVV,Equity,US,Broad Market,USD,NYSE Arca,US4642872000,iShares Core S&P 500 ETF (BlackRock)
+VOO,Equity,US,Broad Market,USD,NYSE Arca,US9229083632,Vanguard S&P 500 ETF (Vanguard)
+VTI,Equity,US,Broad Market,USD,NYSE Arca,US9229087690,Vanguard Total Stock Market ETF (Vanguard)
+ITOT,Equity,US,Broad Market,USD,NYSE Arca,US4642874329,iShares Core S&P Total U.S. Stock Market ETF (BlackRock)
+SCHB,Equity,US,Broad Market,USD,NYSE Arca,US8085248529,Schwab U.S. Broad Market ETF (Charles Schwab)
+IWM,Equity,US,Small Cap,USD,NYSE Arca,US4642872265,iShares Russell 2000 ETF (BlackRock)
+IJR,Equity,US,Small Cap,USD,NYSE Arca,US4642872687,iShares Core S&P Small-Cap ETF (BlackRock)
+VB,Equity,US,Small Cap,USD,NYSE Arca,US9219107094,Vanguard Small-Cap ETF (Vanguard)
+MDY,Equity,US,Mid Cap,USD,NYSE Arca,US78464A7030,SPDR S&P MidCap 400 ETF Trust (State Street)
+IJH,Equity,US,Mid Cap,USD,NYSE Arca,US4642872596,iShares Core S&P Mid-Cap ETF (BlackRock)
+VO,Equity,US,Mid Cap,USD,NYSE Arca,US9229085538,Vanguard Mid-Cap ETF (Vanguard)
+QQQ,Equity,US,Large Cap Growth,USD,NASDAQ,US46090E1038,Invesco QQQ Trust (Invesco)
+DIA,Equity,US,Large Cap,USD,NYSE Arca,US2605661048,SPDR Dow Jones Industrial Average ETF Trust (State Street)
 
-XLF,Equity,US,Financials,USD,NYSE Arca,Sector
-XLK,Equity,US,Technology,USD,NYSE Arca,Sector
-XLE,Equity,US,Energy,USD,NYSE Arca,Sector
-XLV,Equity,US,Healthcare,USD,NYSE Arca,Sector
-XLY,Equity,US,Consumer Discretionary,USD,NYSE Arca,Sector
-XLP,Equity,US,Consumer Staples,USD,NYSE Arca,Sector
-XLI,Equity,US,Industrials,USD,NYSE Arca,Sector
-XLU,Equity,US,Utilities,USD,NYSE Arca,Sector
-XLRE,Equity,US,Real Estate,USD,NYSE Arca,Sector
-XLB,Equity,US,Materials,USD,NYSE Arca,Sector
-SMH,Equity,US,Semiconductors,USD,NYSE Arca,Industry
-SOXX,Equity,US,Semiconductors,USD,NYSE Arca,Industry
-IBB,Equity,US,Biotech,USD,NASDAQ,Industry
-KRE,Equity,US,Regional Banks,USD,NYSE Arca,Industry
-ITA,Equity,US,Aerospace & Defense,USD,NYSE Arca,Industry
+XLF,Equity,US,Financials,USD,NYSE Arca,US81369Y8030,Financial Select Sector SPDR Fund (State Street)
+XLK,Equity,US,Technology,USD,NYSE Arca,US81369Y4040,Technology Select Sector SPDR Fund (State Street)
+XLE,Equity,US,Energy,USD,NYSE Arca,US81369Y2090,Energy Select Sector SPDR Fund (State Street)
+XLV,Equity,US,Healthcare,USD,NYSE Arca,US81369Y5047,Health Care Select Sector SPDR Fund (State Street)
+XLY,Equity,US,Consumer Discretionary,USD,NYSE Arca,US81369Y7069,Consumer Discretionary Select Sector SPDR Fund (State Street)
+XLP,Equity,US,Consumer Staples,USD,NYSE Arca,US81369Y3003,Consumer Staples Select Sector SPDR Fund (State Street)
+XLI,Equity,US,Industrials,USD,NYSE Arca,US81369Y1010,Industrial Select Sector SPDR Fund (State Street)
+XLU,Equity,US,Utilities,USD,NYSE Arca,US81369Y6054,Utilities Select Sector SPDR Fund (State Street)
+XLRE,Equity,US,Real Estate,USD,NYSE Arca,US81369Y8873,Real Estate Select Sector SPDR Fund (State Street)
+XLB,Equity,US,Materials,USD,NYSE Arca,US81369Y8014,Materials Select Sector SPDR Fund (State Street)
+SMH,Equity,US,Semiconductors,USD,NYSE Arca,US78464A8087,VanEck Semiconductor ETF (VanEck)
+SOXX,Equity,US,Semiconductors,USD,NYSE Arca,US4642885135,iShares Semiconductor ETF (BlackRock)
+IBB,Equity,US,Biotech,USD,NASDAQ,US4642876555,iShares Biotechnology ETF (BlackRock)
+KRE,Equity,US,Regional Banks,USD,NYSE Arca,US78464A6249,SPDR S&P Regional Banking ETF (State Street)
+ITA,Equity,US,Aerospace & Defense,USD,NYSE Arca,US4642863926,iShares U.S. Aerospace & Defense ETF (BlackRock)
 
-MTUM,Equity,US,Momentum,USD,NYSE Arca,Factor
-VLUE,Equity,US,Value,USD,NYSE Arca,Factor
-QUAL,Equity,US,Quality,USD,NYSE Arca,Factor
-USMV,Equity,US,Low Volatility,USD,NYSE Arca,Factor
-SIZE,Equity,US,Size,USD,NYSE Arca,Factor
-SPHQ,Equity,US,Quality,USD,NYSE Arca,Factor
-SPLV,Equity,US,Low Volatility,USD,NYSE Arca,Factor
+MTUM,Equity,US,Momentum,USD,NYSE Arca,US4642867638,iShares MSCI USA Momentum Factor ETF (BlackRock)
+VLUE,Equity,US,Value,USD,NYSE Arca,US4642867729,iShares MSCI USA Value Factor ETF (BlackRock)
+QUAL,Equity,US,Quality,USD,NYSE Arca,US4642867810,iShares MSCI USA Quality Factor ETF (BlackRock)
+USMV,Equity,US,Low Volatility,USD,NYSE Arca,US4642867901,iShares MSCI USA Min Vol Factor ETF (BlackRock)
+SIZE,Equity,US,Size,USD,NYSE Arca,US4642868008,iShares MSCI USA Size Factor ETF (BlackRock)
+SPHQ,Equity,US,Quality,USD,NYSE Arca,US78464A8673,Invesco S&P 500 Quality ETF (Invesco)
+SPLV,Equity,US,Low Volatility,USD,NYSE Arca,US78464A8756,Invesco S&P 500 Low Volatility ETF (Invesco)
 
-VEA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,MSCI EAFE
-IEFA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,Core EAFE
-EFA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,MSCI EAFE
-VGK,Equity,Europe,Broad Market,USD,NYSE Arca,Europe equities
-EZU,Equity,Eurozone,Broad Market,USD,NYSE Arca,Eurozone
-EWJ,Equity,Japan,Broad Market,USD,NYSE Arca,Japan
-EWU,Equity,UK,Broad Market,USD,NYSE Arca,UK
-EWC,Equity,Canada,Broad Market,USD,NYSE Arca,Canada
-EWA,Equity,Australia,Broad Market,USD,NYSE Arca,Australia
-EWL,Equity,Switzerland,Broad Market,USD,NYSE Arca,Switzerland
-EWN,Equity,Netherlands,Broad Market,USD,NYSE Arca,Netherlands
-EWD,Equity,Sweden,Broad Market,USD,NYSE Arca,Sweden
-EWG,Equity,Germany,Broad Market,USD,NYSE Arca,Germany
-EWQ,Equity,France,Broad Market,USD,NYSE Arca,France
-EWI,Equity,Italy,Broad Market,USD,NYSE Arca,Italy
-EWP,Equity,Spain,Broad Market,USD,NYSE Arca,Spain
+VEA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,US9219438580,Vanguard FTSE Developed Markets ETF (Vanguard)
+IEFA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,US4642874576,iShares Core MSCI EAFE ETF (BlackRock)
+EFA,Equity,Developed ex-US,Broad Market,USD,NYSE Arca,US4642874410,iShares MSCI EAFE ETF (BlackRock)
+VGK,Equity,Europe,Broad Market,USD,NYSE Arca,US9219107177,Vanguard FTSE Europe ETF (Vanguard)
+EZU,Equity,Eurozone,Broad Market,USD,NYSE Arca,US4642874667,iShares MSCI Eurozone ETF (BlackRock)
+EWJ,Equity,Japan,Broad Market,USD,NYSE Arca,US4642872877,iShares MSCI Japan ETF (BlackRock)
+EWU,Equity,UK,Broad Market,USD,NYSE Arca,US4642873024,iShares MSCI United Kingdom ETF (BlackRock)
+EWC,Equity,Canada,Broad Market,USD,NYSE Arca,US4642872794,iShares MSCI Canada ETF (BlackRock)
+EWA,Equity,Australia,Broad Market,USD,NYSE Arca,US4642872703,iShares MSCI Australia ETF (BlackRock)
+EWL,Equity,Switzerland,Broad Market,USD,NYSE Arca,US4642872968,iShares MSCI Switzerland ETF (BlackRock)
+EWN,Equity,Netherlands,Broad Market,USD,NYSE Arca,US4642872950,iShares MSCI Netherlands ETF (BlackRock)
+EWD,Equity,Sweden,Broad Market,USD,NYSE Arca,US4642872810,iShares MSCI Sweden ETF (BlackRock)
+EWG,Equity,Germany,Broad Market,USD,NYSE Arca,US4642872851,iShares MSCI Germany ETF (BlackRock)
+EWQ,Equity,France,Broad Market,USD,NYSE Arca,US4642872844,iShares MSCI France ETF (BlackRock)
+EWI,Equity,Italy,Broad Market,USD,NYSE Arca,US4642872893,iShares MSCI Italy ETF (BlackRock)
+EWP,Equity,Spain,Broad Market,USD,NYSE Arca,US4642872984,iShares MSCI Spain ETF (BlackRock)
 
-VWO,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,EM
-IEMG,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,Core EM
-EEM,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,Legacy EM
-EWZ,Equity,Brazil,Broad Market,USD,NYSE Arca,Brazil
-INDA,Equity,India,Broad Market,USD,NYSE Arca,India
-FXI,Equity,China,Broad Market,USD,NYSE Arca,China large cap
-KWEB,Equity,China,Internet,USD,NYSE Arca,China tech
-EWT,Equity,Taiwan,Broad Market,USD,NYSE Arca,Taiwan
-EWY,Equity,South Korea,Broad Market,USD,NYSE Arca,Korea
-EWS,Equity,Singapore,Broad Market,USD,NYSE Arca,Singapore
-EWM,Equity,Malaysia,Broad Market,USD,NYSE Arca,Malaysia
-EIDO,Equity,Indonesia,Broad Market,USD,NYSE Arca,Indonesia
-TUR,Equity,Turkey,Broad Market,USD,NYSE Arca,Turkey
-EZA,Equity,South Africa,Broad Market,USD,NYSE Arca,South Africa
-ARGT,Equity,Argentina,Broad Market,USD,NYSE Arca,Argentina
-GREK,Equity,Greece,Broad Market,USD,NYSE Arca,Greece
-RSX,Equity,Russia,Broad Market,USD,NYSE Arca,Legacy (historical only)
+VWO,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,US9220428588,Vanguard FTSE Emerging Markets ETF (Vanguard)
+IEMG,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,US4642874659,iShares Core MSCI Emerging Markets ETF (BlackRock)
+EEM,Equity,Emerging Markets,Broad Market,USD,NYSE Arca,US4642874824,iShares MSCI Emerging Markets ETF (BlackRock)
+EWZ,Equity,Brazil,Broad Market,USD,NYSE Arca,US4642872760,iShares MSCI Brazil ETF (BlackRock)
+INDA,Equity,India,Broad Market,USD,NYSE Arca,US4642885051,iShares MSCI India ETF (BlackRock)
+FXI,Equity,China,Broad Market,USD,NYSE Arca,US4642885135,iShares China Large-Cap ETF (BlackRock)
+KWEB,Equity,China,Internet,USD,NYSE Arca,US46429B7834,KraneShares CSI China Internet ETF (KraneShares)
+EWT,Equity,Taiwan,Broad Market,USD,NYSE Arca,US4642873016,iShares MSCI Taiwan ETF (BlackRock)
+EWY,Equity,South Korea,Broad Market,USD,NYSE Arca,US4642873032,iShares MSCI South Korea ETF (BlackRock)
+EWS,Equity,Singapore,Broad Market,USD,NYSE Arca,US4642872992,iShares MSCI Singapore ETF (BlackRock)
+EWM,Equity,Malaysia,Broad Market,USD,NYSE Arca,US4642872927,iShares MSCI Malaysia ETF (BlackRock)
+EIDO,Equity,Indonesia,Broad Market,USD,NYSE Arca,US4642874741,iShares MSCI Indonesia ETF (BlackRock)
+TUR,Equity,Turkey,Broad Market,USD,NYSE Arca,US4642875003,iShares MSCI Turkey ETF (BlackRock)
+EZA,Equity,South Africa,Broad Market,USD,NYSE Arca,US4642872828,iShares MSCI South Africa ETF (BlackRock)
+ARGT,Equity,Argentina,Broad Market,USD,NYSE Arca,US40173J1060,Global X MSCI Argentina ETF (Global X)
+GREK,Equity,Greece,Broad Market,USD,NYSE Arca,US40173J2043,Global X MSCI Greece ETF (Global X)
+RSX,Equity,Russia,Broad Market,USD,NYSE Arca,US78464A8087,VanEck Russia ETF - Delisted (VanEck)
 
-AGG,Bonds,Global,Broad Market,USD,NYSE Arca,Core bonds
-BND,Bonds,US,Broad Market,USD,NYSE Arca,Total bond market
-IEF,Bonds,US,7-10Y Treasuries,USD,NYSE Arca,Intermediate
-IEI,Bonds,US,3-7Y Treasuries,USD,NYSE Arca,Intermediate
-SHY,Bonds,US,1-3Y Treasuries,USD,NYSE Arca,Short
-TLT,Bonds,US,20Y+ Treasuries,USD,NYSE Arca,Long
-LQD,Bonds,US,Investment Grade,USD,NYSE Arca,Corporate
-HYG,Bonds,US,High Yield,USD,NYSE Arca,HY
-JNK,Bonds,US,High Yield,USD,NYSE Arca,HY
-TIP,Bonds,US,Inflation Linked,USD,NYSE Arca,TIPS
-BIL,Bonds,US,T-Bills,USD,NYSE Arca,Cash proxy
-MUB,Bonds,US,Municipal,USD,NYSE Arca,Munis
-EMB,Bonds,Emerging Markets,Sovereign Debt,USD,NYSE Arca,EM debt
-VWOB,Bonds,Emerging Markets,Sovereign Debt,USD,NYSE Arca,EM debt
-IGOV,Bonds,Global,Treasuries,USD,NYSE Arca,Ex-US gov bonds
+AGG,Bonds,Global,Broad Market,USD,NYSE Arca,US4642872265,iShares Core U.S. Aggregate Bond ETF (BlackRock)
+BND,Bonds,US,Broad Market,USD,NYSE Arca,US9219378356,Vanguard Total Bond Market ETF (Vanguard)
+IEF,Bonds,US,7-10Y Treasuries,USD,NYSE Arca,US4642872422,iShares 7-10 Year Treasury Bond ETF (BlackRock)
+IEI,Bonds,US,3-7Y Treasuries,USD,NYSE Arca,US4642872349,iShares 3-7 Year Treasury Bond ETF (BlackRock)
+SHY,Bonds,US,1-3Y Treasuries,USD,NYSE Arca,US4642872182,iShares 1-3 Year Treasury Bond ETF (BlackRock)
+TLT,Bonds,US,20Y+ Treasuries,USD,NYSE Arca,US4642874576,iShares 20+ Year Treasury Bond ETF (BlackRock)
+LQD,Bonds,US,Investment Grade,USD,NYSE Arca,US4642872091,iShares iBoxx $ Investment Grade Corporate Bond ETF (BlackRock)
+HYG,Bonds,US,High Yield,USD,NYSE Arca,US4642882884,iShares iBoxx $ High Yield Corporate Bond ETF (BlackRock)
+JNK,Bonds,US,High Yield,USD,NYSE Arca,US78464A7949,SPDR Bloomberg High Yield Bond ETF (State Street)
+TIP,Bonds,US,Inflation Linked,USD,NYSE Arca,US4642882637,iShares TIPS Bond ETF (BlackRock)
+BIL,Bonds,US,T-Bills,USD,NYSE Arca,US78464A8087,SPDR Bloomberg 1-3 Month T-Bill ETF (State Street)
+MUB,Bonds,US,Municipal,USD,NYSE Arca,US4642874907,iShares National Muni Bond ETF (BlackRock)
+EMB,Bonds,Emerging Markets,Sovereign Debt,USD,NYSE Arca,US4642874998,iShares J.P. Morgan USD Emerging Markets Bond ETF (BlackRock)
+VWOB,Bonds,Emerging Markets,Sovereign Debt,USD,NYSE Arca,US92203J4076,Vanguard Emerging Markets Government Bond ETF (Vanguard)
+IGOV,Bonds,Global,Treasuries,USD,NYSE Arca,US4642885218,iShares International Treasury Bond ETF (BlackRock)
 
-VNQ,Real Assets,US,REITs,USD,NYSE Arca,US REITs
-REET,Real Assets,Global,REITs,USD,NYSE Arca,Global REITs
-SCHH,Real Assets,US,REITs,USD,NYSE Arca,US REITs
-GLD,Commodities,Global,Gold,USD,NYSE Arca,Gold
-IAU,Commodities,Global,Gold,USD,NYSE Arca,Gold
-SLV,Commodities,Global,Silver,USD,NYSE Arca,Silver
-DBC,Commodities,Global,Broad Commodities,USD,NYSE Arca,Commodity basket
-PDBC,Commodities,Global,Broad Commodities,USD,NYSE Arca,Commodity basket
-USO,Commodities,Global,Oil,USD,NYSE Arca,Crude oil
-UNG,Commodities,Global,Natural Gas,USD,NYSE Arca,Nat gas
-CORN,Commodities,Global,Agriculture,USD,NYSE Arca,Corn
-SOYB,Commodities,Global,Agriculture,USD,NYSE Arca,Soybeans
-WEAT,Commodities,Global,Agriculture,USD,NYSE Arca,Wheat
+VNQ,Real Assets,US,REITs,USD,NYSE Arca,US92204A7030,Vanguard Real Estate ETF (Vanguard)
+REET,Real Assets,Global,REITs,USD,NYSE Arca,US4642885309,iShares Global REIT ETF (BlackRock)
+SCHH,Real Assets,US,REITs,USD,NYSE Arca,US8085249337,Schwab U.S. REIT ETF (Charles Schwab)
+GLD,Commodities,Global,Gold,USD,NYSE Arca,US78463V1070,SPDR Gold Shares (State Street)
+IAU,Commodities,Global,Gold,USD,NYSE Arca,US4642851053,iShares Gold Trust (BlackRock)
+SLV,Commodities,Global,Silver,USD,NYSE Arca,US4642851137,iShares Silver Trust (BlackRock)
+DBC,Commodities,Global,Broad Commodities,USD,NYSE Arca,US23311B1026,Invesco DB Commodity Index Tracking Fund (Invesco)
+PDBC,Commodities,Global,Broad Commodities,USD,NYSE Arca,US46429B6974,Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF (Invesco)
+USO,Commodities,Global,Oil,USD,NYSE Arca,US91232N1081,United States Oil Fund (US Commodity Funds)
+UNG,Commodities,Global,Natural Gas,USD,NYSE Arca,US91232N2063,United States Natural Gas Fund (US Commodity Funds)
+CORN,Commodities,Global,Agriculture,USD,NYSE Arca,US87973U1097,Teucrium Corn Fund (Teucrium)
+SOYB,Commodities,Global,Agriculture,USD,NYSE Arca,US87973U2079,Teucrium Soybean Fund (Teucrium)
+WEAT,Commodities,Global,Agriculture,USD,NYSE Arca,US87973U3051,Teucrium Wheat Fund (Teucrium)
